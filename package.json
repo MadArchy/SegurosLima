@@ -1,0 +1,23 @@
+{
+  "name": "seguros-lima",
+  "version": "1.0.0",
+  "description": "Seguros Lima - Aseguradora en Cúcuta, Colombia",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev"
+  },
+  "keywords": [
+    "seguros",
+    "cucuta",
+    "colombia",
+    "aseguradora"
+  ],
+  "author": "Seguros Lima",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^34.0.0",
+    "jimp": "^1.6.0",
+    "sharp": "^0.34.5"
+  }
+}
