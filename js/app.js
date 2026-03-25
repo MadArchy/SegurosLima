@@ -1,4 +1,4 @@
-/* ============================================
+﻿/* ============================================
    SEGUROS LIMA — App JavaScript
    ============================================ */
 
@@ -11,7 +11,7 @@ function openWhatsApp(message) {
   const text = message || '¡Hola! Me interesa información sobre sus seguros. ¿Me pueden ayudar?';
   const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
   if (typeof window !== 'undefined' && window.open) {
-    window.open(url, '_blank');
+    window.open(url, '_blank', 'noopener,noreferrer');
   }
 }
 
@@ -144,9 +144,18 @@ function initQuickQuote() {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const tipo = form.querySelector('#quote-tipo')?.value || 'default';
-    const nombre = form.querySelector('#quote-nombre')?.value || '';
-    const tel = form.querySelector('#quote-tel')?.value || '';
+    const tipo = form.querySelector('#quote-tipo')?.value || '';
+    const nombre = form.querySelector('#quote-nombre')?.value?.trim() || '';
+    const tel = form.querySelector('#quote-tel')?.value?.trim() || '';
+
+    if (!tipo) {
+      showAlert('Por favor selecciona el tipo de seguro que necesitas.', 'error');
+      return;
+    }
+    if (!nombre) {
+      showAlert('Por favor ingresa tu nombre para continuar.', 'error');
+      return;
+    }
 
     let msg = `¡Hola! Mi nombre es ${nombre}`;
     if (tel) msg += `, mi teléfono es ${tel}`;
@@ -183,12 +192,31 @@ function initContactForm() {
     const tipo = form.querySelector('[name="tipo"]')?.value || '';
     const mensaje = form.querySelector('[name="mensaje"]')?.value?.trim() || '';
 
-    if (!nombre || !telefono) {
-      showAlert('Por favor completa los campos requeridos.', 'error');
+    if (!nombre) {
+      showAlert('Por favor ingresa tu nombre completo.', 'error');
       return;
     }
+    if (!telefono) {
+      showAlert('Por favor ingresa tu número de teléfono.', 'error');
+      return;
+    }
+    // Validate Colombian phone number
+    const telefonoClean = telefono.replace(/[\s\-().+]/g, '');
+    const colPhone = /^(57)?3[0-9]{9}$/;
+    if (!colPhone.test(telefonoClean)) {
+      showAlert('Ingresa un número colombiano válido. Ej: 3001234567', 'error');
+      return;
+    }
+    // Validate email if provided
+    if (email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        showAlert('El correo electrónico ingresado no es válido.', 'error');
+        return;
+      }
+    }
 
-    let msg = `¡Hola Seguros Lima! 👋\n\n`;
+    let msg = `¡Hola Seguros Lima! \n\n`;
     msg += `*Nombre:* ${nombre}\n`;
     msg += `*Teléfono:* ${telefono}\n`;
     if (email) msg += `*Email:* ${email}\n`;
@@ -257,3 +285,4 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initSmoothScroll();
 });
+
