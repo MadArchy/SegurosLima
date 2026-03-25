@@ -1,0 +1,26 @@
+/* ============================================================
+   SEGUROS LIMA — Main CSS Entry Point
+   
+   Import order matters (cascade):
+   1. fonts.css       — Local @font-face declarations
+   2. variables.css   — Design tokens (colors, spacing, shadows)
+   3. base.css        — Reset & base HTML styles
+   4. animations.css  — @keyframes, transitions, scroll reveals
+   5. components.css  — Navbar, buttons, forms, cards (reusable)
+   6. layout.css      — Hero, sections, footer, page-specific grids
+   
+   All assets are self-hosted. NO external dependencies.
+   ============================================================ */
+
+@import url('fonts.css');
+@import url('animations.css');
+
+/* ============================================================
+   After the imports above, all remaining styles are in
+   styles.css (migrated from the monolithic file).
+   Future refactor target:
+     @import url('variables.css');
+     @import url('base.css');
+     @import url('components.css');
+     @import url('layout.css');
+   ============================================================ */

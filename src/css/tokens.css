@@ -1,0 +1,281 @@
+/* ==========================================================
+   SEGUROS LIMA — DESIGN TOKENS (Referencia Maestra)
+   Versión: 1.0  |  Fecha: 2026-03-24
+   
+   Este archivo documenta TODOS los tokens de diseño del
+   proyecto. No hay dependencias externas. Todo está local.
+   
+   Para usar en CSS:  @import 'tokens.css';
+   ========================================================== */
+
+:root {
+
+  /* ========================================================
+     PALETA DE COLORES
+     ======================================================== */
+
+  /* Dorado — Color principal de marca */
+  --gold:        #D4A017;   /* Dorado principal */
+  --gold-light:  #F0C040;   /* Dorado claro (hovers) */
+  --gold-dark:   #AA7C10;   /* Dorado oscuro (textos) */
+  --gold-shine:  #FFD966;   /* Dorado brillante (stats) */
+
+  /* Azul marino — Color secundario de marca */
+  --navy:        #0A1F5C;   /* Azul marino principal */
+  --navy-light:  #152E80;   /* Azul marino claro */
+  --navy-dark:   #050D2E;   /* Azul marino oscuro (bg) */
+  --navy-mid:    #1040A0;   /* Azul marino medio */
+
+  /* Rojo — Acento, urgencia */
+  --red:         #CF1124;
+  --red-light:   #E82035;
+  --red-dark:    #A00D1C;
+
+  /* Cobalt — Botones, links */
+  --cobalt:      #1565D8;
+  --cobalt-light:#2979FF;
+
+  /* Emerald — Seguros empresariales */
+  --emerald:     #00897B;
+
+  /* Ámbar — Alertas */
+  --amber:       #F59E0B;
+
+  /* WhatsApp */
+  --whatsapp:    #25D366;
+  --whatsapp-dark: #1ebe5d;
+
+  /* Neutrales */
+  --white:       #FFFFFF;
+  --off-white:   #F7F9FD;
+  --gray-light:  #EEF2FA;
+  --gray:        #8E97AE;
+  --gray-dark:   #3D4860;
+  --text-dark:   #08122A;
+  --text-medium: #2B3558;
+
+  /* ========================================================
+     GRADIENTES
+     ======================================================== */
+  --gradient-hero:   linear-gradient(135deg, #050D2E 0%, #0A1F5C 45%, #152E80 80%, #1A3FA8 100%);
+  --gradient-gold:   linear-gradient(135deg, #AA7C10 0%, #D4A017 40%, #F0C040 70%, #FFD966 100%);
+  --gradient-cobalt: linear-gradient(135deg, #1040A0, #1565D8, #2979FF);
+  --gradient-card:   linear-gradient(180deg, rgba(10,31,92,0.03) 0%, rgba(21,101,216,0.06) 100%);
+  --gradient-red:    linear-gradient(135deg, #A00D1C, #CF1124, #E82035);
+
+  /* ========================================================
+     TIPOGRAFÍA
+     ======================================================== */
+
+  /* Familias de fuentes — Auto-hospedadas en /fonts/ */
+  --font-heading:  'Playfair Display', serif;    /* H1, H2, H3, números grandes */
+  --font-body:     'DM Sans', sans-serif;        /* Párrafos, UI general */
+  --font-label:    'Montserrat', sans-serif;     /* Labels, badges, botones, H4-H6 */
+
+  /* Escala tipográfica */
+  --text-xs:    0.72rem;    /* 11.5px — etiquetas, categorías */
+  --text-sm:    0.875rem;   /* 14px  — texto secundario */
+  --text-base:  1rem;       /* 16px  — texto normal */
+  --text-md:    1.05rem;    /* 16.8px — párrafos destacados */
+  --text-lg:    1.125rem;   /* 18px  — párrafos hero */
+  --text-xl:    1.25rem;    /* 20px  — subtítulos */
+  --text-2xl:   1.5rem;     /* 24px */
+  --text-3xl:   clamp(2rem, 3.2vw, 3rem);     /* Títulos de sección */
+  --text-hero:  clamp(3.5rem, 5.5vw, 5.2rem); /* Título hero H1 */
+
+  /* Pesos */
+  --weight-light:   300;
+  --weight-normal:  400;
+  --weight-medium:  500;
+  --weight-semi:    600;
+  --weight-bold:    700;
+  --weight-extra:   800;
+  --weight-black:   900;
+
+  /* Interlineado */
+  --leading-tight:  1.07;
+  --leading-snug:   1.15;
+  --leading-normal: 1.65;
+  --leading-relaxed:1.75;
+  --leading-loose:  1.8;
+
+  /* Espaciado entre letras */
+  --tracking-tight:  -0.01em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.04em;
+  --tracking-wider:   0.06em;
+  --tracking-widest:  0.14em;
+  --tracking-ultra:   0.18em;
+
+  /* ========================================================
+     SOMBRAS
+     ======================================================== */
+  --shadow-sm:     0 2px 12px rgba(10,31,92,0.10);
+  --shadow-md:     0 8px 28px rgba(10,31,92,0.15);
+  --shadow-lg:     0 20px 56px rgba(10,31,92,0.22);
+  --shadow-gold:   0 10px 32px rgba(212,160,23,0.4);
+  --shadow-cobalt: 0 10px 32px rgba(21,101,216,0.35);
+  --shadow-green:  0 8px 24px rgba(37,211,102,0.3);
+
+  /* ========================================================
+     BORDES Y RADIOS
+     ======================================================== */
+  --radius-sm:   10px;
+  --radius-md:   18px;
+  --radius-lg:   28px;
+  --radius-full: 9999px;
+
+  /* ========================================================
+     ESPACIADO
+     ======================================================== */
+  --space-xs:  8px;
+  --space-sm:  16px;
+  --space-md:  24px;
+  --space-lg:  40px;
+  --space-xl:  64px;
+  --space-2xl: 88px;
+
+  --section-pad: 88px 0;
+  --container:   1200px;
+
+  /* ========================================================
+     TRANSICIONES Y ANIMACIONES
+     ======================================================== */
+  --transition:      all 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: all 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.18s ease;
+  --ease-out-quart:  cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-spring:     cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ========================================================
+     Z-INDEX SCALE
+     ======================================================== */
+  --z-base:     0;
+  --z-raised:   10;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-navbar:   1000;
+  --z-modal:    2000;
+  --z-toast:    9998;
+  --z-top:      9999;
+}
+
+/* ==========================================================
+   ANIMACIONES — Keyframes auto-hospedados
+   ========================================================== */
+
+/* Fade + slide desde abajo */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade + slide desde la derecha */
+@keyframes fadeRight {
+  from { opacity: 0; transform: translateX(-32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Fade suave */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Pulso de luz en el título hero */
+@keyframes textLightPulse {
+  0%   { text-shadow: 0 2px 20px rgba(0,0,0,0.3), 0 0 5px rgba(255,255,255,0.0); }
+  100% { text-shadow: 0 2px 20px rgba(0,0,0,0.3), 0 0 25px rgba(255,255,255,0.8); }
+}
+
+/* Flotación suave para elementos */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* Pulso de brillo dorado */
+@keyframes goldPulse {
+  0%, 100% { box-shadow: 0 10px 32px rgba(212,160,23,0.4); }
+  50%       { box-shadow: 0 10px 48px rgba(212,160,23,0.7); }
+}
+
+/* Shimmer / brillo de carga */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Ripple de botones */
+@keyframes ripple {
+  0%   { transform: scale(0); opacity: 0.6; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+/* Scroll progress bar */
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+
+/* Rotación */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Parpadeo del cursor de typing */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ============================================================
+   NOTAS DE AUTONOMÍA — Qué está almacenado localmente
+   ============================================================
+
+   FUENTES (src/fonts/):
+   ✅ DM Sans        — 300, 400, 500, 600, 700      (5 archivos .woff2)
+   ✅ Playfair Display — 400, 500, 600, 700, 800, 900 (6 archivos .woff2)
+   ✅ Montserrat     — 400, 500, 600, 700, 800      (5 archivos .woff2)
+   Total: 16 archivos .woff2 locales. Sin Google Fonts.
+
+   IMÁGENES (src/assets/):
+   ✅ hero-family.jpg        — Foto hero principal
+   ✅ agent_portrait.jpg     — Asesora en sección beneficios
+   ✅ advisor.jpg            — Imagen adicional asesores
+   ✅ card-auto.jpg          — Tarjeta seguro de auto
+   ✅ card-hogar.jpg         — Tarjeta seguro de hogar
+   ✅ card-vida.jpg          — Tarjeta seguro de vida
+   ✅ card-empresarial.jpg   — Tarjeta seguro empresarial
+   ✅ family_sunset.jpg      — Imagen CTA final
+   ✅ blog_hogar.jpg         — Blog artículo hogar
+   ✅ blog_auto.jpg          — Blog artículo auto
+   ✅ blog_vida.jpg          — Blog artículo vida
+   ✅ blog_empresarial.jpg   — Blog artículo empresarial
+   ✅ blog_guias.jpg         — Blog artículo guías
+   ✅ blog_consejos.jpg      — Blog artículo consejos
+   ✅ logo.png               — Logo principal
+   ✅ favicon.png            — Favicon original
+   ✅ favicon-32x32.png      — Favicon pestaña
+   ✅ favicon-48x48.png      — Favicon bookmarks
+   ✅ favicon-192x192.png    — Favicon PWA/Android
+   ✅ apple-touch-icon.png   — Favicon iOS
+
+   CSS (src/css/):
+   ✅ styles.css       — Design system completo
+   ✅ fonts.css        — @font-face locales
+   ✅ animations.css   — Keyframes y animaciones
+   ✅ tokens.css       — Este archivo (referencia maestra)
+
+   JAVASCRIPT (src/js/):
+   ✅ app.js           — Lógica: navbar, WhatsApp, formularios, counters
+   ✅ effects.js       — Efectos: partículas, parallax, tilt, typing, ripple,
+                          cursor glow, scroll progress, stagger, smart navbar
+
+   DEPENDENCIAS EXTERNAS ELIMINADAS:
+   ❌ fonts.googleapis.com  — Eliminado de los 5 HTML
+   ❌ fonts.gstatic.com     — Eliminado de los 5 HTML
+
+   RESULTADO: El sitio funciona 100% sin internet.
+   ============================================================ */

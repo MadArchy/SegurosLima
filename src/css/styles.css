@@ -3,8 +3,11 @@
    Cúcuta, Colombia
    ============================================ */
 
-/* Google Fonts — Premium Typography */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+/* ============================================================
+   Local Fonts & Animations — Self-hosted (no external CDN)
+   ============================================================ */
+@import url('fonts.css');
+@import url('animations.css');
 
 /* ============================================
    CSS VARIABLES — Vivid Elegant Palette
@@ -260,7 +263,7 @@ ul { list-style: none; }
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('../assets/hero-family.jpg');
+  background-image: url('../assets/images/hero-family.jpg');
   background-size: cover;
   background-position: center 30%;
   opacity: 0.12;
@@ -656,7 +659,7 @@ ul { list-style: none; }
   right: 16px;
   width: 56px;
   height: 56px;
-  background-image: url('../assets/logo.png');
+  background-image: url('../assets/images/logo.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -994,7 +997,7 @@ ul { list-style: none; }
   border: 2px solid #E2E8F0;
   border-radius: var(--radius-sm);
   font-size: 0.9rem;
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   color: var(--text-dark);
   background: var(--white);
   transition: var(--transition);
@@ -1187,19 +1190,19 @@ select.form-control {
 }
 
 #auto .service-detail-visual {
-  background: linear-gradient(135deg, rgba(5,13,46,0.88) 0%, rgba(21,101,216,0.8) 100%), url('../assets/card-auto.jpg') center/cover;
+  background: linear-gradient(135deg, rgba(5,13,46,0.88) 0%, rgba(21,101,216,0.8) 100%), url('../assets/images/card-auto.jpg') center/cover;
 }
 
 #hogar .service-detail-visual {
-  background: linear-gradient(135deg, rgba(5,13,46,0.88) 0%, rgba(170,124,16,0.8) 100%), url('../assets/card-hogar.jpg') center/cover;
+  background: linear-gradient(135deg, rgba(5,13,46,0.88) 0%, rgba(170,124,16,0.8) 100%), url('../assets/images/card-hogar.jpg') center/cover;
 }
 
 #vida .service-detail-visual {
-  background: linear-gradient(135deg, rgba(5,13,46,0.88) 0%, rgba(160,13,28,0.8) 100%), url('../assets/card-vida.jpg') center/cover;
+  background: linear-gradient(135deg, rgba(5,13,46,0.88) 0%, rgba(160,13,28,0.8) 100%), url('../assets/images/card-vida.jpg') center/cover;
 }
 
 #empresarial .service-detail-visual {
-  background: linear-gradient(135deg, rgba(5,13,46,0.88) 0%, rgba(0,137,123,0.8) 100%), url('../assets/card-empresarial.jpg') center/cover;
+  background: linear-gradient(135deg, rgba(5,13,46,0.88) 0%, rgba(0,137,123,0.8) 100%), url('../assets/images/card-empresarial.jpg') center/cover;
 }
 
 .service-detail-visual .service-big-icon {
@@ -1967,3 +1970,4 @@ svg.icon {
   color: var(--gold);
   fill: var(--gold);
 }
+
