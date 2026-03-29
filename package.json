@@ -1,7 +1,7 @@
 {
-  "name": "seguros-lima",
+  "name": "lima-seguros",
   "version": "1.0.0",
-  "description": "Seguros Lima - Aseguradora en Cúcuta, Colombia",
+  "description": "Lima Seguros - Aseguradora en Cúcuta, Colombia",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -13,7 +13,7 @@
     "colombia",
     "aseguradora"
   ],
-  "author": "Seguros Lima",
+  "author": "Lima Seguros",
   "license": "ISC",
   "devDependencies": {
     "electron": "^34.5.8",

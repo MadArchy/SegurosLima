@@ -1,5 +1,5 @@
 /* ============================================
-   SEGUROS LIMA — Design System
+   LIMA SEGUROS — Design System
    Cúcuta, Colombia
    ============================================ */
 
@@ -692,33 +692,7 @@ ul { list-style: none; }
   z-index: 1;
 }
 
-/* Color accent overlay per card type */
-.service-card-image::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  opacity: 0.45;
-  z-index: 1;
-  transition: var(--transition-slow);
-}
-
-.service-card:hover .service-card-image::after {
-  opacity: 0.35;
-}
-
-/* Per-card accent colors */
-.service-card.card-auto .service-card-image::after {
-  background: linear-gradient(135deg, #1040A0, #2979FF);
-}
-.service-card.card-hogar .service-card-image::after {
-  background: linear-gradient(135deg, #AA7C10, #F0C040);
-}
-.service-card.card-vida .service-card-image::after {
-  background: linear-gradient(135deg, #A00D1C, #E82035);
-}
-.service-card.card-empresarial .service-card-image::after {
-  background: linear-gradient(135deg, #004D4D, #00897B);
-}
+/* Removed color accent overlays to keep images clear */
 
 /* Icon badge over the image */
 .service-card-badge {
@@ -1190,19 +1164,19 @@ select.form-control {
 }
 
 #auto .service-detail-visual {
-  background: linear-gradient(135deg, rgba(5,13,46,0.88) 0%, rgba(21,101,216,0.8) 100%), url('../assets/images/card-auto.jpg') center/cover;
+  background: linear-gradient(135deg, rgba(5,13,46,0.8) 0%, rgba(10,31,92,0.3) 100%), url('../assets/images/card-auto.jpg') center/cover;
 }
 
 #hogar .service-detail-visual {
-  background: linear-gradient(135deg, rgba(5,13,46,0.88) 0%, rgba(170,124,16,0.8) 100%), url('../assets/images/card-hogar.jpg') center/cover;
+  background: linear-gradient(135deg, rgba(5,13,46,0.8) 0%, rgba(10,31,92,0.3) 100%), url('../assets/images/card-hogar.jpg') center/cover;
 }
 
 #vida .service-detail-visual {
-  background: linear-gradient(135deg, rgba(5,13,46,0.88) 0%, rgba(160,13,28,0.8) 100%), url('../assets/images/card-vida.jpg') center/cover;
+  background: linear-gradient(135deg, rgba(5,13,46,0.8) 0%, rgba(10,31,92,0.3) 100%), url('../assets/images/card-vida.jpg') center/cover;
 }
 
 #empresarial .service-detail-visual {
-  background: linear-gradient(135deg, rgba(5,13,46,0.88) 0%, rgba(0,137,123,0.8) 100%), url('../assets/images/card-empresarial.jpg') center/cover;
+  background: linear-gradient(135deg, rgba(5,13,46,0.8) 0%, rgba(10,31,92,0.3) 100%), url('../assets/images/card-empresarial.jpg') center/cover;
 }
 
 .service-detail-visual .service-big-icon {
@@ -1246,86 +1220,126 @@ select.form-control {
   background: var(--white);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(14,44,110,0.06);
-  transition: var(--transition);
+  box-shadow: 0 4px 24px rgba(10,31,92,0.05);
+  border: 1px solid rgba(14,44,110,0.03);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  flex-direction: column;
 }
 
 .blog-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 48px rgba(10,31,92,0.12);
 }
 
 .blog-card-image {
-  height: 200px;
-  background: var(--gradient-hero);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 4rem;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .blog-card-image::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 50%, rgba(7,26,69,0.3) 100%);
+  background: linear-gradient(to bottom, rgba(10,31,92,0.05) 0%, transparent 100%);
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.blog-card:hover .blog-card-image::after {
+  opacity: 0;
 }
 
 .blog-card-category {
   position: absolute;
-  top: 16px;
-  left: 16px;
+  top: 20px;
+  left: 20px;
   background: var(--gold);
   color: var(--navy-dark);
-  padding: 4px 12px;
-  border-radius: var(--radius-full);
-  font-size: 0.72rem;
-  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  z-index: 1;
+  letter-spacing: 0.12em;
+  z-index: 2;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  display: inline-flex;
+  align-items: center;
+}
+
+.blog-card-category svg {
+  width: 14px;
+  height: 14px;
+  margin-right: 6px;
+  stroke-width: 2.2;
 }
 
 .blog-card-body {
-  padding: 28px;
+  padding: 36px 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .blog-card-date {
+  font-family: 'DM Sans', sans-serif;
   font-size: 0.75rem;
   color: var(--gray);
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 10px;
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
 }
 
 .blog-card h3 {
-  font-size: 1.1rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 800;
   color: var(--navy);
-  margin-bottom: 12px;
-  line-height: 1.4;
+  margin-bottom: 16px;
+  line-height: 1.35;
+  transition: color 0.3s ease;
+}
+
+.blog-card:hover h3 {
+  color: var(--gold-dark);
 }
 
 .blog-card p {
-  font-size: 0.875rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
   color: var(--gray-dark);
-  line-height: 1.65;
-  margin-bottom: 20px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+  flex: 1;
 }
 
 .blog-card .read-more {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--gold-dark);
-  transition: var(--transition);
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: all 0.3s ease;
+  margin-top: auto;
+  align-self: flex-start;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
 }
 
-.blog-card:hover .read-more { gap: 10px; }
+.blog-card:hover .read-more { 
+  color: var(--gold-dark);
+  border-bottom: 2px solid var(--gold);
+}
 
 /* ============================================
    CONTACT INFO

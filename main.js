@@ -15,7 +15,7 @@ function createWindow() {
       contextIsolation: true,
     },
     icon: path.join(__dirname, 'src', 'assets', 'logo.png'),
-    title: 'Seguros Lima — Cúcuta, Colombia',
+    title: 'Lima Seguros — Cúcuta, Colombia',
     show: false,
     backgroundColor: '#0E2C6E',
   });
@@ -45,7 +45,7 @@ function createWindow() {
 function createMenu() {
   const template = [
     {
-      label: 'Seguros Lima',
+      label: 'Lima Seguros',
       submenu: [
         { label: 'Inicio', click: () => mainWindow.loadFile('src/index.html') },
         { label: 'Servicios', click: () => mainWindow.loadFile('src/servicios.html') },
