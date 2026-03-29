@@ -1,5 +1,5 @@
 /* ============================================================
-   SEGUROS LIMA — Dynamic Effects Engine v2
+   LIMA SEGUROS — Dynamic Effects Engine v2
    Premium animations & microinteractions
    ============================================================ */
 

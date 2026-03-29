@@ -1,5 +1,5 @@
 ﻿/* ============================================
-   SEGUROS LIMA — App JavaScript
+   LIMA SEGUROS — App JavaScript
    ============================================ */
 
 const WHATSAPP_NUMBER = '573132928641';
@@ -216,7 +216,7 @@ function initContactForm() {
       }
     }
 
-    let msg = `¡Hola Seguros Lima! \n\n`;
+    let msg = `¡Hola Lima Seguros! \n\n`;
     msg += `*Nombre:* ${nombre}\n`;
     msg += `*Teléfono:* ${telefono}\n`;
     if (email) msg += `*Email:* ${email}\n`;
