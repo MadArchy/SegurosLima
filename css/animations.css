@@ -99,22 +99,9 @@
 /* ============================================================
    HERO BADGE — PULSE DOT
    ============================================================ */
-.hero-badge::before {
-  content: '';
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  background: #25D366;
-  border-radius: 50%;
-  margin-right: 8px;
-  animation: badgePulse 2s ease-in-out infinite;
-  vertical-align: middle;
-}
 
-@keyframes badgePulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
-  50%       { box-shadow: 0 0 0 6px rgba(37, 211, 102, 0); }
-}
+
+
 
 /* ============================================================
    SERVICE CARDS — 3D TILT + MAGNETIC HOVER
