@@ -989,11 +989,25 @@ select.form-control {
    CTA SECTION
    ============================================ */
 .cta-section {
-  background: var(--gradient-hero);
+  background: #000; /* Fondo neutral para eliminar el filtro azul */
   padding: 96px 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+}
+
+.cta-section-img {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Efecto parallax sutil */
+}
+
+.cta-section-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.5));
+  z-index: 0;
 }
 
 .cta-section::before {
