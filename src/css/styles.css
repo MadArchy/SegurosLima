@@ -252,7 +252,7 @@ ul { list-style: none; }
    ============================================ */
 .hero {
   min-height: 100vh;
-  background: #020617; /* Darker, more neutral background to remove blue filter */
+  background: #000; /* Neutral black background to eliminate blue filter */
   position: relative;
   display: flex;
   align-items: center;
@@ -263,11 +263,11 @@ ul { list-style: none; }
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('../assets/images/hero-family.jpg');
+  background-image: linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%), url('../assets/images/hero-family.jpg');
   background-size: cover;
   background-position: center 30%;
-  opacity: 0.45; /* Increased opacity for a clearer image */
-  filter: brightness(0.85) contrast(1.1); /* Improved clarity and sharpness */
+  opacity: 0.85; /* Significantly increased opacity for maximum clarity */
+  filter: brightness(0.9) contrast(1.1) saturate(1.1); /* Sharp and vivid look */
   pointer-events: none;
 }
 
