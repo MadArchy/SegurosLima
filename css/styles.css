@@ -252,7 +252,7 @@ ul { list-style: none; }
    ============================================ */
 .hero {
   min-height: 100vh;
-  background: var(--gradient-hero);
+  background: #020617; /* Darker, more neutral background to remove blue filter */
   position: relative;
   display: flex;
   align-items: center;
@@ -266,7 +266,8 @@ ul { list-style: none; }
   background-image: url('../assets/images/hero-family.jpg');
   background-size: cover;
   background-position: center 30%;
-  opacity: 0.12;
+  opacity: 0.45; /* Increased opacity for a clearer image */
+  filter: brightness(0.85) contrast(1.1); /* Improved clarity and sharpness */
   pointer-events: none;
 }
 
